@@ -8,7 +8,7 @@ const students = [
 function searchStudents(query) {
   return students.filter(student =>
     student.name.toLowerCase().includes(query.toLowerCase()) 
-    // It will take the name, convert it to lowercase, then checks with the query and shows the result
+    // It will take the name, convert it to lowercase, then checks with the query and shows the result 
   );
 }
 
