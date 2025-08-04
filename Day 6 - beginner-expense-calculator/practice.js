@@ -1,6 +1,6 @@
 let expenses = [];
 
-function addExpense() {
+const addExpense = () => {
   const titleInput = document.getElementById("title");
   const amountInput = document.getElementById("amount");
 
@@ -24,24 +24,24 @@ function addExpense() {
   renderExpenses();
 }
 
-function deleteExpense(id) {
+const deleteExpense = (id) => {
   expenses = expenses.filter(exp => exp.id !== id);
   renderExpenses();
 }
 
-function renderExpenses() {
+const renderExpenses = () => {
   const list = document.getElementById("expenseList");
   list.innerHTML = "";
 
-  expenses.forEach(exp => {
+  expenses.forEach(({ id, title, amount }) => {
     const li = document.createElement("li");
     li.innerHTML = `
-      ${exp.title} — Rs. ${exp.amount}
-      <button class="delete" onclick="deleteExpense(${exp.id})">❌</button>
+      ${title} — Rs. ${amount}
+      <button class="delete" onclick="deleteExpense(${id})">❌</button>
     `;
     list.appendChild(li);
   });
 
-  const total = expenses.reduce((acc, item) => acc + item.amount, 0);
+  const total = expenses.reduce((acc, { amount }) => acc + amount, 0);
   document.getElementById("total").innerText = total;
 }
