@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Basic Dice Game </h1>
+    <button onclick="playGame()">Roll the Dice</button>
+    <p id="result">Result:</p>
+
+    <script>
+        function playGame() {
+            let player1 = Math.floor(Math.random() * 6) + 1;
+            let player2 = Math.floor(Math.random() * 6) + 1;
+
+            let result = `Player 1 rolled ${player1} , Player 2 rolled ${player2} <br>`;
+
+            if (player1 > player2) {
+                result += "Player 1 wins";
+            } else if (player2 > player1) {
+                result += "Player 2 wins";
+            } else {
+                result += "Its a draw";
+            }
+
+            document.getElementById("result").innerHTML = result;
+
+        }
+    </script>
+</body>
+
+</html>
