@@ -10,4 +10,15 @@ console.log(randomNum);
 const scores = [75, 88, 92, 61, 55];
 
 console.log(Math.min(...scores));
-console.log(Math.max(...scores)); 
+console.log(Math.max(...scores));
+
+///function to show random no after every 2 secnod delay//
+
+function randomNo() {
+    let randomNum = Math.floor(Math.random() * 6) + 1;
+
+    setInterval(() => {
+        console.log("Showing after every 2 second");
+    }, 2000);
+}
+console.log(randomNo());
