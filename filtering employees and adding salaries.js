@@ -3,7 +3,6 @@ const employees = [
   { name: "Sara", salary: 200 },
   { name: "Ali", salary: 100 }
 ];
-
 const filteredEmp = employees.filter((item, index, arr) => {
 
   return arr.findIndex(obj => obj.name === item.name) === index;
